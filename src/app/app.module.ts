@@ -17,6 +17,7 @@ import { VerifyEmailComponent } from './components/verify-email/verify-email.com
 
 //Service
 import { AuthService } from "./services/auth.service";
+import { AuthGuard } from "./guard/auth.guard";
 
 @NgModule({
   declarations: [
@@ -34,10 +35,12 @@ import { AuthService } from "./services/auth.service";
     AngularFireAuthModule,
     AngularFirestoreModule
   ],
-  providers: [],
+  providers: [AuthGuard], //Agregamos a los providers el guard
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
 
 
 
